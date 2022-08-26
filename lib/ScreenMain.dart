@@ -1,5 +1,6 @@
+import 'package:firstapp/Theme/Color.dart';
 import 'package:flutter/material.dart';
-import 'package:firstapp/FormAC.dart';
+import 'package:firstapp/Home_ActiveMenu/FormAC.dart';
 import 'main.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -20,6 +21,7 @@ class FirstScreen extends StatelessWidget {
                 children: const [
                   Image(
                     image: AssetImage('assets/main.png'),
+                    fit: BoxFit.cover,
                     height: 120,
                     width: 120,
                   ),
@@ -30,7 +32,7 @@ class FirstScreen extends StatelessWidget {
                     "Bie Shop",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 144, 140, 111),
+                        color: AppColors.orange,
                         fontSize: 27),
                   ),
                 ],
@@ -56,7 +58,7 @@ class FirstScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: AppColors.white,
                       ),
                     ),
                   ),
@@ -69,3 +71,4 @@ class FirstScreen extends StatelessWidget {
     );
   }
 }
+// TODO Implement this library.

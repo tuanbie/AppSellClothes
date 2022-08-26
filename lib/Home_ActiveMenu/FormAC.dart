@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'LoginForm.dart';
-import 'RegisterForm.dart';
+import 'package:firstapp/Home_ActiveMenu/RegisterForm.dart';
+import 'package:firstapp/Home_ActiveMenu/LoginForm.dart';
 
 class FormAC extends StatefulWidget {
   const FormAC({Key? key}) : super(key: key);
@@ -151,7 +151,7 @@ class _MyWidgetState extends State<FormAC> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Login(),
+                            builder: (context) => login(),
                           ),
                         );
                       },
@@ -191,7 +191,7 @@ class _MyWidgetState extends State<FormAC> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Register(),
+                              builder: (context) => const Regiter(),
                             ),
                           );
                         },

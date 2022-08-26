@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'ScreenMain.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firstapp/ScreenMain.dart';
+import 'Theme/Color.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

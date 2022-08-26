@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1046223273572",
+    "project_id": "rare-mechanic-352204",
+    "storage_bucket": "rare-mechanic-352204.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046223273572:android:b2f594764598c967792971",
+        "android_client_info": {
+          "package_name": "com.example.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046223273572-8eh19cjtvvd2q6n9afh3g9qrejlrab6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwNNfmzCZNUMKCxs1ujwsI0tPvCmvemiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046223273572-8eh19cjtvvd2q6n9afh3g9qrejlrab6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
