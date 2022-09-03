@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/Home_ActiveMenu/RegisterForm.dart';
-import 'package:firstapp/Home_ActiveMenu/LoginForm.dart';
+import 'package:firstapp/Screen/Account/RegisterForm.dart';
+import 'package:firstapp/Screen/Account/LoginForm.dart';
 
 class FormAC extends StatefulWidget {
   const FormAC({Key? key}) : super(key: key);

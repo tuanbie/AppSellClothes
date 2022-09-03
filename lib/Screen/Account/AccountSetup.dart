@@ -1,3 +1,4 @@
+import 'package:firstapp/Screen/Home_ActionMenu/Home.dart';
 import 'package:firstapp/Theme/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -5,7 +6,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/src/material/icons.dart';
 // import 'package:country_calling_code_picker/picker.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+// import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import '../Home_ActionMenu/Active.dart';
 
 class Account extends StatefulWidget {
   Account({Key? key}) : super(key: key);
@@ -229,6 +231,7 @@ class Acountt extends State<Account> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
@@ -281,8 +284,8 @@ class Acountt extends State<Account> {
                     const EdgeInsets.symmetric(horizontal: 25.0, vertical: 30),
                 child: GestureDetector(
                   onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => Account()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: Container(
                     padding: EdgeInsets.all(17),

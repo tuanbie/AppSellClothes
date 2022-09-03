@@ -40,6 +40,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^1.21.0
   intl_phone_number_input: ^0.7.0+2
+  flutter_svg: ^1.1.4
+  carousel_slider: ^4.1.1
+  smooth_page_indicator: ^1.0.0+2
+  # flat_icons_flutter: <latest_version>
+
   
 dev_dependencies:
   flutter_test:
@@ -69,6 +74,7 @@ flutter:
     - assets/images/login.png
     - assets/avt.jpg
     - assets/main.png
+    - assets/icon/filter.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

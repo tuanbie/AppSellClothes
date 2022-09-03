@@ -1,18 +1,21 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firstapp/Home_ActiveMenu/LoginForm.dart';
+import 'package:firstapp/Screen/Account/AccountSetup.dart';
 import 'package:firstapp/Theme/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
+import 'package:firstapp/Screen/Account/RegisterForm.dart';
+import 'RegisterForm.dart';
 
-class Regiter extends StatefulWidget {
-  const Regiter({Key? key}) : super(key: key);
+class login extends StatefulWidget {
+  const login({Key? key}) : super(key: key);
 
   @override
-  State<Regiter> createState() => _MyWidgetState();
+  State<login> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<Regiter> {
+class _MyWidgetState extends State<login> {
   final _textControllor = TextEditingController();
   final _passControllor = TextEditingController();
   bool isCheckBox = false;
@@ -57,10 +60,10 @@ class _MyWidgetState extends State<Regiter> {
                     width: 170,
                   ),
                   const Text(
-                    "Create to Your Account",
+                    "Login to Your Account",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: AppColors.black,
+                        color: Colors.black,
                         fontSize: 28),
                   ),
                   const SizedBox(
@@ -76,13 +79,13 @@ class _MyWidgetState extends State<Regiter> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.black),
+                          borderSide: BorderSide(color: Colors.black),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         hintText: 'Email',
                         border: InputBorder.none,
                         filled: true,
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.email,
                           size: 20,
                           color: AppColors.black,
@@ -125,7 +128,7 @@ class _MyWidgetState extends State<Regiter> {
                         //   onPressed: () async => _textControllor.clear(),
                         // ),
                       ),
-                      obscureText: false,
+                      obscureText: true,
                     ),
                   ),
                   Padding(
@@ -147,18 +150,21 @@ class _MyWidgetState extends State<Regiter> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: GestureDetector(
-                      onTap: signin,
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Account()));
+                      },
                       child: Container(
                         padding: EdgeInsets.all(17),
                         decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: Color.fromARGB(255, 0, 0, 0),
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: const Center(
                           child: Text(
-                            'Sign up',
+                            'Sign in',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: AppColors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
@@ -166,6 +172,16 @@ class _MyWidgetState extends State<Regiter> {
                         ),
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "Forgot the password?",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.black),
                   ),
                   const SizedBox(
                     height: 30,
@@ -177,11 +193,14 @@ class _MyWidgetState extends State<Regiter> {
                         fontSize: 15,
                         color: AppColors.grey),
                   ),
+                  // Divider(
+                  //   color: AppColors.black,
+                  // ),
                   const SizedBox(
-                    height: 18,
+                    height: 12,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -193,9 +212,9 @@ class _MyWidgetState extends State<Regiter> {
                               border: Border.all(color: AppColors.border),
                               borderRadius: BorderRadius.circular(16),
                             ),
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 28, vertical: 14),
-                            child: Icon(
+                            child: const Icon(
                               Icons.facebook,
                               color: Colors.blue,
                               size: 28,
@@ -247,7 +266,7 @@ class _MyWidgetState extends State<Regiter> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Already have an account?",
+                        "Don't have an account?",
                         style: TextStyle(
                           fontSize: 13,
                           color: AppColors.smailcolor,
@@ -258,14 +277,14 @@ class _MyWidgetState extends State<Regiter> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const login()),
+                                builder: (context) => const Regiter()),
                           );
                         },
                         child: const Text(
-                          " Sign in",
+                          " Sign up",
                           style: TextStyle(
                             fontSize: 13,
-                            color: Colors.black,
+                            color: AppColors.black,
                           ),
                         ),
                       ),

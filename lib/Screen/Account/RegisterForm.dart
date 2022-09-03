@@ -1,21 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firstapp/Home_ActiveMenu/AccountSetup.dart';
+import 'package:firstapp/Screen/Account/LoginForm.dart';
 import 'package:firstapp/Theme/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-import 'RegisterForm.dart';
-
-class login extends StatefulWidget {
-  const login({Key? key}) : super(key: key);
+class Regiter extends StatefulWidget {
+  const Regiter({Key? key}) : super(key: key);
 
   @override
-  State<login> createState() => _MyWidgetState();
+  State<Regiter> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<login> {
+class _MyWidgetState extends State<Regiter> {
   final _textControllor = TextEditingController();
   final _passControllor = TextEditingController();
   bool isCheckBox = false;
@@ -60,10 +57,10 @@ class _MyWidgetState extends State<login> {
                     width: 170,
                   ),
                   const Text(
-                    "Login to Your Account",
+                    "Create to Your Account",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: AppColors.black,
                         fontSize: 28),
                   ),
                   const SizedBox(
@@ -79,13 +76,13 @@ class _MyWidgetState extends State<login> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
+                          borderSide: BorderSide(color: AppColors.black),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         hintText: 'Email',
                         border: InputBorder.none,
                         filled: true,
-                        prefixIcon: Icon(
+                        prefixIcon: const Icon(
                           Icons.email,
                           size: 20,
                           color: AppColors.black,
@@ -128,7 +125,7 @@ class _MyWidgetState extends State<login> {
                         //   onPressed: () async => _textControllor.clear(),
                         // ),
                       ),
-                      obscureText: true,
+                      obscureText: false,
                     ),
                   ),
                   Padding(
@@ -150,21 +147,18 @@ class _MyWidgetState extends State<login> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Account()));
-                      },
+                      onTap: signin,
                       child: Container(
                         padding: EdgeInsets.all(17),
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: Colors.black,
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: const Center(
                           child: Text(
-                            'Sign in',
+                            'Sign up',
                             style: TextStyle(
-                              color: AppColors.white,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
@@ -172,16 +166,6 @@ class _MyWidgetState extends State<login> {
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
-                    "Forgot the password?",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.black),
                   ),
                   const SizedBox(
                     height: 30,
@@ -194,10 +178,10 @@ class _MyWidgetState extends State<login> {
                         color: AppColors.grey),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 18,
                   ),
                   Padding(
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -209,9 +193,9 @@ class _MyWidgetState extends State<login> {
                               border: Border.all(color: AppColors.border),
                               borderRadius: BorderRadius.circular(16),
                             ),
-                            padding: const EdgeInsets.symmetric(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 28, vertical: 14),
-                            child: const Icon(
+                            child: Icon(
                               Icons.facebook,
                               color: Colors.blue,
                               size: 28,
@@ -263,7 +247,7 @@ class _MyWidgetState extends State<login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Don't have an account?",
+                        "Already have an account?",
                         style: TextStyle(
                           fontSize: 13,
                           color: AppColors.smailcolor,
@@ -274,14 +258,14 @@ class _MyWidgetState extends State<login> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Regiter()),
+                                builder: (context) => const login()),
                           );
                         },
                         child: const Text(
-                          " Sign up",
+                          " Sign in",
                           style: TextStyle(
                             fontSize: 13,
-                            color: AppColors.black,
+                            color: Colors.black,
                           ),
                         ),
                       ),
