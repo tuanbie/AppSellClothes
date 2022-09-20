@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firstapp/Screen/Account/LoginForm.dart';
 import 'package:firstapp/Theme/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class Regiter extends StatefulWidget {
   const Regiter({Key? key}) : super(key: key);
@@ -16,14 +14,6 @@ class _MyWidgetState extends State<Regiter> {
   final _textControllor = TextEditingController();
   final _passControllor = TextEditingController();
   bool isCheckBox = false;
-
-  Future signin() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _textControllor.text.trim(),
-      password: _passControllor.text.trim(),
-    );
-  }
-
   @override
   void dispose() {
     _textControllor.dispose();
@@ -147,7 +137,10 @@ class _MyWidgetState extends State<Regiter> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: GestureDetector(
-                      onTap: signin,
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => login()));
+                      },
                       child: Container(
                         padding: EdgeInsets.all(17),
                         decoration: BoxDecoration(

@@ -328,22 +328,22 @@ class Acountt extends State<Account> {
         SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton.icon(
-              onPressed: () {
-                takephoto(ImageSource.camera);
-              },
-              icon: Icon(Icons.camera),
-              label: Text("Camera"),
-            ),
-            FlatButton.icon(
-              onPressed: () {
-                takephoto(ImageSource.gallery);
-              },
-              icon: Icon(Icons.image),
-              label: Text("Thư viện"),
-            )
-          ],
+          // children: <Widget>[
+          //   FlatButton.icon(
+          //     onPressed: () {
+          //       takephoto(ImageSource.camera);
+          //     },
+          //     icon: Icon(Icons.camera),
+          //     label: Text("Camera"),
+          //   ),
+          //   FlatButton.icon(
+          //     onPressed: () {
+          //       takephoto(ImageSource.gallery);
+          //     },
+          //     icon: Icon(Icons.image),
+          //     label: Text("Thư viện"),
+          //   )
+          // ],
         )
       ]),
     );

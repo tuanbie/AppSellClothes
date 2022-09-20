@@ -32,7 +32,7 @@ class FirstScreen extends StatelessWidget {
                     "Bie Shop",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: AppColors.orange,
+                        color: AppColors.black,
                         fontSize: 27),
                   ),
                 ],
@@ -42,23 +42,30 @@ class FirstScreen extends StatelessWidget {
                 child: SizedBox(
                   width: 300,
                   height: 50,
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => FormAC()),
-                      );
-                    },
-                    color: Colors.black,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                  child: Container(
+                    padding: EdgeInsets.all(17),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Text(
-                      'Start',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.white,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FormAC()),
+                        );
+                      },
+                      // color: Colors.black,
+                      // shape: const RoundedRectangleBorder(
+                      //   borderRadius: BorderRadius.all(Radius.circular(20)),
+                      // ),
+                      child: const Text(
+                        'Start',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.white,
+                        ),
                       ),
                     ),
                   ),

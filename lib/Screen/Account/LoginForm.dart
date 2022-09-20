@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firstapp/Screen/Account/AccountSetup.dart';
 import 'package:firstapp/Theme/Color.dart';
 import 'package:flutter/material.dart';
@@ -20,19 +19,12 @@ class _MyWidgetState extends State<login> {
   final _passControllor = TextEditingController();
   bool isCheckBox = false;
 
-  Future signin() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _textControllor.text.trim(),
-      password: _passControllor.text.trim(),
-    );
-  }
-
-  @override
-  void dispose() {
-    _textControllor.dispose();
-    _passControllor.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _textControllor.dispose();
+  //   _passControllor.dispose();
+  //   super.dispose();
+  // }
 
   // var _securetext = true;
   // final checked = CheckBoxx(title: 'Remember me');
@@ -280,6 +272,10 @@ class _MyWidgetState extends State<login> {
                                 builder: (context) => const Regiter()),
                           );
                         },
+                        // child: InkWell(
+                        //   onTap: () {
+                        //     Get.to(const Regiter());
+                        //   },
                         child: const Text(
                           " Sign up",
                           style: TextStyle(
