@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/ScreenMain.dart';
-import 'Theme/Color.dart';
+import 'Screen/Account/AccountSetup.dart';
+import 'Screen/Account/LoginForm.dart';
+import 'Screen/Account/RegisterForm.dart';
+import 'Screen/FormAC.dart';
+import 'Screen/Home_ActionMenu/Active.dart';
+import 'Screen/Theme/Color.dart';
 // import 'package:flat_icons_flutter/flat_icons_flutter.dart';
 
 void main() {
@@ -15,10 +20,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowMaterialGrid: false,
       debugShowCheckedModeBanner: false,
-      home: FirstScreen(),
+      // home: FirstScreen(),
+      initialRoute: '$FirstScreen',
+      routes: {
+        '$FirstScreen': (_) => FirstScreen(),
+        '$FormAC': (_) => FormAC(),
+        '$Account': (_) => Account(),
+        '$login': (_) => const login(),
+        '$Regiter': (_) => const Regiter(),
+        '$Home': (_) => const Home(),
+      },
     );
   }
 }

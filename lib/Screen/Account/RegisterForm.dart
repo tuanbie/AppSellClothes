@@ -1,5 +1,5 @@
 import 'package:firstapp/Screen/Account/LoginForm.dart';
-import 'package:firstapp/Theme/Color.dart';
+import 'package:firstapp/Screen/Theme/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -29,13 +29,13 @@ class _MyWidgetState extends State<Regiter> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: AppColors.white,
+        backgroundColor: white,
         elevation: 0,
       ),
       body: SafeArea(
         child: Container(
           constraints: const BoxConstraints.expand(),
-          color: AppColors.white,
+          color: white,
           child: SingleChildScrollView(
             child: Center(
               child: Column(
@@ -50,7 +50,7 @@ class _MyWidgetState extends State<Regiter> {
                     "Create to Your Account",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: AppColors.black,
+                        color: black,
                         fontSize: 28),
                   ),
                   const SizedBox(
@@ -62,11 +62,11 @@ class _MyWidgetState extends State<Regiter> {
                       controller: _textControllor,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.white),
+                          borderSide: BorderSide(color: white),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.black),
+                          borderSide: BorderSide(color: black),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         hintText: 'Email',
@@ -75,7 +75,7 @@ class _MyWidgetState extends State<Regiter> {
                         prefixIcon: const Icon(
                           Icons.email,
                           size: 20,
-                          color: AppColors.black,
+                          color: black,
                         ),
 
                         // suffixIcon: IconButton(
@@ -94,11 +94,11 @@ class _MyWidgetState extends State<Regiter> {
                       controller: _passControllor,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.white),
+                          borderSide: BorderSide(color: white),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.black),
+                          borderSide: BorderSide(color: black),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         hintText: 'Password',
@@ -107,7 +107,7 @@ class _MyWidgetState extends State<Regiter> {
                         prefixIcon: const Icon(
                           Icons.lock,
                           size: 20,
-                          color: AppColors.black,
+                          color: black,
                         ),
 
                         // suffixIcon: IconButton(
@@ -166,9 +166,7 @@ class _MyWidgetState extends State<Regiter> {
                   const Text(
                     'or continue with',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                        color: AppColors.grey),
+                        fontWeight: FontWeight.bold, fontSize: 15, color: grey),
                   ),
                   const SizedBox(
                     height: 18,
@@ -183,7 +181,7 @@ class _MyWidgetState extends State<Regiter> {
                           child: Container(
                             // margin: const EdgeInsets.all(15.0),
                             decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.border),
+                              border: Border.all(color: border),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             padding: EdgeInsets.symmetric(
@@ -203,7 +201,7 @@ class _MyWidgetState extends State<Regiter> {
                           child: Container(
                             // margin: const EdgeInsets.all(15.0),
                             decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.border),
+                              border: Border.all(color: border),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             padding: const EdgeInsets.symmetric(
@@ -222,7 +220,7 @@ class _MyWidgetState extends State<Regiter> {
                           child: Container(
                             // margin: const EdgeInsets.all(15.0),
                             decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.border),
+                              border: Border.all(color: border),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             padding: const EdgeInsets.symmetric(
@@ -243,7 +241,7 @@ class _MyWidgetState extends State<Regiter> {
                         "Already have an account?",
                         style: TextStyle(
                           fontSize: 13,
-                          color: AppColors.smailcolor,
+                          color: smailcolor,
                         ),
                       ),
                       InkWell(

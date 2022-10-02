@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/Theme/Color.dart';
+import 'package:firstapp/Screen/Theme/Color.dart';
 
 class Wallet extends StatefulWidget {
   const Wallet({Key? key}) : super(key: key);

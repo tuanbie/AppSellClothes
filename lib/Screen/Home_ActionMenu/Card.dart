@@ -1,5 +1,6 @@
+import 'package:firstapp/Screen/widget/widget_home/List_wibget.dart';
 import 'package:flutter/material.dart';
-import 'package:firstapp/Theme/Color.dart';
+import 'package:firstapp/Screen/Theme/Color.dart';
 
 class Cart extends StatefulWidget {
   const Cart({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: listwibget(),
+    );
   }
 }

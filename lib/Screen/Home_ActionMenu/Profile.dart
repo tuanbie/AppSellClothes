@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/Theme/Color.dart';
+import 'package:firstapp/Screen/Theme/Color.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);

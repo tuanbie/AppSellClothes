@@ -1,10 +1,12 @@
 import 'package:firstapp/Screen/Account/AccountSetup.dart';
-import 'package:firstapp/Theme/Color.dart';
+import 'package:firstapp/Screen/Theme/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:firstapp/Screen/Account/RegisterForm.dart';
+import '../widget/login_Api/wibget_loginAPI.dart';
+
 import 'RegisterForm.dart';
 
 class login extends StatefulWidget {
@@ -34,234 +36,178 @@ class _MyWidgetState extends State<login> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: AppColors.white,
+        backgroundColor: white,
         elevation: 0,
       ),
       body: SafeArea(
         child: Container(
           constraints: const BoxConstraints.expand(),
-          color: AppColors.white,
+          color: white,
           child: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Image(
-                    image: AssetImage('assets/images/login.png'),
-                    height: 170,
-                    width: 170,
-                  ),
-                  const Text(
-                    "Login to Your Account",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 28),
-                  ),
-                  const SizedBox(
-                    height: 18,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: TextField(
-                      controller: _textControllor,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.white),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        hintText: 'Email',
-                        border: InputBorder.none,
-                        filled: true,
-                        prefixIcon: Icon(
-                          Icons.email,
-                          size: 20,
-                          color: AppColors.black,
-                        ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Image(
+                  image: AssetImage("assets/images/login.png"),
+                  height: 170,
+                  width: 170,
+                ),
+                const Text(
+                  "Login to Your Account",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 28),
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: TextField(
+                    controller: _textControllor,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: white),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: 'Email',
+                      border: InputBorder.none,
+                      filled: true,
+                      prefixIcon: Icon(
+                        Icons.email,
+                        size: 20,
+                        color: black,
+                      ),
 
-                        // suffixIcon: IconButton(
-                        //   icon: Icon(Icons.clear),
-                        //   onPressed: () async => _textControllor.clear(),
-                        // ),
-                      ),
+                      // suffixIcon: IconButton(
+                      //   icon: Icon(Icons.clear),
+                      //   onPressed: () async => _textControllor.clear(),
+                      // ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 18,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: TextField(
-                      controller: _passControllor,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.white),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.black),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        hintText: 'Password',
-                        border: InputBorder.none,
-                        filled: true,
-                        prefixIcon: const Icon(
-                          Icons.lock,
-                          size: 20,
-                          color: AppColors.black,
-                        ),
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: TextField(
+                    controller: _passControllor,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: white),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: 'Password',
+                      border: InputBorder.none,
+                      filled: true,
+                      prefixIcon: const Icon(
+                        Icons.lock,
+                        size: 20,
+                        color: black,
+                      ),
 
-                        // suffixIcon: IconButton(
-                        //   icon: Icon(Icons.clear),
-                        //   onPressed: () async => _textControllor.clear(),
-                        // ),
-                      ),
-                      obscureText: true,
+                      // suffixIcon: IconButton(
+                      //   icon: Icon(Icons.clear),
+                      //   onPressed: () async => _textControllor.clear(),
+                      // ),
                     ),
+                    obscureText: true,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 100),
-                    child: CheckboxListTile(
-                      // checkboxShape: OutlineInputBorder(borderRadius: BorderRadius.all(24)),
-                      controlAffinity: ListTileControlAffinity.leading,
-                      title: const Text(
-                        'Remember me',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                      value: isCheckBox,
-                      onChanged: (value) {
-                        setState(() => isCheckBox = value!);
-                      },
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CheckboxListTile(
+                    // checkboxShape: OutlineInputBorder(borderRadius: BorderRadius.all(24)),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    title: const Text(
+                      'Remember me',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
+                    value: isCheckBox,
+                    onChanged: (value) {
+                      setState(() => isCheckBox = value!);
+                    },
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Account()));
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(17),
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Sign in',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Account()));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(17),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Sign in',
+                          style: TextStyle(
+                            color: white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
                     "Forgot the password?",
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.black),
+                        color: black),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Text(
-                    'or continue with',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                        color: AppColors.grey),
-                  ),
-                  // Divider(
-                  //   color: AppColors.black,
-                  // ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(5),
-                          child: Container(
-                            // margin: const EdgeInsets.all(15.0),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.border),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 28, vertical: 14),
-                            child: const Icon(
-                              Icons.facebook,
-                              color: Colors.blue,
-                              size: 28,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(5),
-                          child: Container(
-                            // margin: const EdgeInsets.all(15.0),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.border),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 28, vertical: 14),
-                            child: const Icon(
-                              FontAwesomeIcons.google,
-                              size: 26,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(5),
-                          child: Container(
-                            // margin: const EdgeInsets.all(15.0),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.border),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 28, vertical: 14),
-                            child: const Icon(
-                              Icons.apple,
-                              size: 28,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text(
+                  'or continue with',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 15, color: grey),
+                ),
+                // Divider(
+                //   color: black,
+                // ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Container(
+                  child: login_API(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
                         "Don't have an account?",
                         style: TextStyle(
                           fontSize: 13,
-                          color: AppColors.smailcolor,
+                          color: smailcolor,
                         ),
                       ),
                       InkWell(
@@ -280,14 +226,14 @@ class _MyWidgetState extends State<login> {
                           " Sign up",
                           style: TextStyle(
                             fontSize: 13,
-                            color: AppColors.black,
+                            color: black,
                           ),
                         ),
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
